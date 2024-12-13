@@ -6,7 +6,7 @@ import MobileNavigation from './components/MobileNavigation';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setBannerData } from './store/movieoSlice';
+import { setBannerData, setImageURL } from './store/movieoSlice';
 
 function App() {
   const dispath = useDispatch();
@@ -23,8 +23,19 @@ function App() {
     }
   }
 
+  const fetchConfiguration = async() => {
+    try {
+      const respone = await axios.get('/configuration')
+
+      dispath(setImageURL(respone.data.images.secure_base_url + "original"))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
     fetchTrendingData()
+    fetchConfiguration()
   }, [])
   
 

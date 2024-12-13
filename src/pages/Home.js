@@ -1,11 +1,14 @@
 import React from 'react'
+import BannerHome from '../components/BannerHome'
 
 
 
 
 const Home = () => {
   return (
-    <h1>Home</h1>
+    <h1>
+      <BannerHome/>
+    </h1>
   )
 }
 
