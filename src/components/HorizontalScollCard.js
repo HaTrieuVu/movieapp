@@ -3,7 +3,7 @@ import Card from "../components/Card";
 
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 
-const HorizontalScollCard = ({ data = [], titleHeading, trending }) => {
+const HorizontalScollCard = ({ data = [], titleHeading, trending, media_type }) => {
     const containerRef = useRef();
 
     const handlePrev = () =>{
@@ -24,7 +24,7 @@ const HorizontalScollCard = ({ data = [], titleHeading, trending }) => {
                     className="grid gap-10 grid-flow-col overflow-x-scroll scroll-smooth transition-all scrollbar-none relative z-20"
                 >
                     {data?.map((movie, i) => {
-                        return <Card key={movie?.id} data={movie} trending={trending} index={i + 1} />;
+                        return <Card key={movie?.id} data={movie} media_type={media_type} trending={trending} index={i + 1} />;
                     })}
                 </div>
 

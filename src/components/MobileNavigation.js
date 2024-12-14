@@ -10,7 +10,7 @@ const MobileNavigation = () => {
                 return (
                     <NavLink 
                         to={nav.href} 
-                        className={({isActive}) => `flex flex-col gap-1 items-center text-white ${isActive && "text-red-400"}` } 
+                        className={({isActive}) => `flex flex-col gap-1 items-center ${isActive ? "text-red-400" : "text-white"}` } 
                         key={nav.label + "mobileNavigation"} 
                     >
                         <div className='text-2xl' >{nav.icon}</div>

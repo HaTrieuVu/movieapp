@@ -13,18 +13,14 @@ const Home = () => {
   const { data: popularTvShowData } = useFetch("/tv/popular")
   const { data: topRateTvShowData } = useFetch("/tv/top_rated")
 
-
-  console.log(trendingData)
-  console.log(topRateData)
-
   return (
     <div>
       <BannerHome />
       <HorizontalScollCard data={trendingData} titleHeading={"Trending Show"} />
-      <HorizontalScollCard data={nowPlayingData} titleHeading={"Now Playing"} trending={false} />
-      <HorizontalScollCard data={topRateData} titleHeading={"Top Rated Movies"} trending={false} />
-      <HorizontalScollCard data={popularTvShowData} titleHeading={"Popular TV Show"} trending={false} />
-      <HorizontalScollCard data={topRateTvShowData} titleHeading={"Top Rate TV Show"} trending={false} />
+      <HorizontalScollCard data={nowPlayingData} titleHeading={"Now Playing"} media_type={"movie"} trending={false} />
+      <HorizontalScollCard data={topRateData} titleHeading={"Top Rated Movies"} media_type={"movie"} trending={false} />
+      <HorizontalScollCard data={popularTvShowData} titleHeading={"Popular TV Show"} media_type={"tv"} trending={false} />
+      <HorizontalScollCard data={topRateTvShowData} titleHeading={"Top Rate TV Show"} media_type={"tv"} trending={false} />
 
     </div>
   )

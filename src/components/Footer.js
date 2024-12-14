@@ -1,8 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer className='hidden lg:block text-center py-3 bg-neutral-600'>
+      <div className='flex items-center justify-center gap-5'>
+        <Link to={"/"}>About</Link>
+        <Link to={"/"}>Contact</Link>
+      </div>
+      <p className='text-sm'>Created By Vũ Hà</p>
+    </footer>
   )
 }
 

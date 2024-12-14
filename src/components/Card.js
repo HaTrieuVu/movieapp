@@ -5,14 +5,16 @@ import { Link } from 'react-router-dom'
 
 import noImage from "../assets/no_image.png"
 
-const Card = ({data, trending, index}) => {
+const Card = ({ data, trending, index, media_type }) => {
+
+    const mediaType = data?.media_type ?? media_type
 
     const imageURL = useSelector(state => state.movieoData.imageURL)
     return (
-        <Link to={`/${data?.media_type}/${data?.id}`} className='w-full min-w-[250px] h-80 overflow-hidden rounded-md relative hover:scale-95 transition-all cursor-pointer'>
-            
+        <Link to={`/${mediaType}/${data?.id}`} className='w-full min-w-[250px] max-w-[250px] h-80 overflow-hidden rounded-md relative hover:scale-95 transition-all cursor-pointer'>
+
             <img className='h-full object-cover' src={data?.backdrop_path ? imageURL + data?.backdrop_path : noImage} alt="img" />
-            
+
             <div className='absolute top-0 le'>
                 {
                     trending && (<div className='py-1 overflow-hidden px-4 rounded-r-full backdrop-blur-3xl bg-black/60'>
@@ -24,7 +26,10 @@ const Card = ({data, trending, index}) => {
             <div className='absolute flex flex-col px-4 py-1 text-white bottom-0 h-16 backdrop-blur-3xl bg-black/90 w-full'>
                 <h2 className='text-ellipsis text-2xl line-clamp-1'>{data?.title || data?.original_title || data?.name}</h2>
                 <div className='flex justify-between'>
-                    <p>{ momemt(data?.release_date).format("MMM Do YY")  || momemt(data?.first_air_date).format("MMM Do YY")}</p>
+                    <p>{data?.release_date ?
+                        (momemt(data?.release_date).format("MMM Do YY"))
+                        : momemt(data?.first_air_date).format("MMM Do YY")}
+                    </p>
                     <p>Rating: {Number(data?.vote_average).toFixed(1)}</p>
                 </div>
             </div>
