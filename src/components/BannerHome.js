@@ -32,12 +32,10 @@ const BannerHome = () => {
             if(currentImage < bannerData.length -1)
             {
                 setCurrentImage(prev => prev + 1)
-                console.log(currentImage)
             } else {
                 setCurrentImage(0);
-                console.log(currentImage)
             }
-        }, 2000)
+        }, 5000)
     
         return () => {
             clearInterval(sliderBanner)
