@@ -57,7 +57,7 @@ const ExplorePage = () => {
       <div className='container mx-auto'>
         <h3 className='capitalize text-2xl lg:text-4xl font-bold mb-10'>Popular {params.explore}</h3>
 
-        <div className='grid grid-cols-[repeat(auto-fit,230px)] gap-10'>
+        <div className='grid grid-cols-[repeat(auto-fit,230px)] gap-10 justify-center'>
           {
             data?.map((exploreData,i) => {
               return (
