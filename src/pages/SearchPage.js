@@ -56,11 +56,12 @@ const SearchPage = () => {
   
 
   return (
-    <div className='m-16'>
+    <div className='my-16'>
 
-      <div className='lg:hidden sticky top-20 z-30 '>
+      <div className='lg:hidden sticky top-20 z-30 px-3'>
         <input type="text" name="" id="" 
           placeholder='Search here..'
+          value={location?.search?.slice(3).split("%20").join(" ")}
           onChange={(e) => navigate(`/search?q=${e.target.value}`)}
           className='py-3 w-full mb-8 text-2xl text-black px-3 rounded-3xl outline-none'
         />
@@ -73,7 +74,6 @@ const SearchPage = () => {
         <div className='grid grid-cols-[repeat(auto-fit,230px)] gap-10 justify-center'>
           {
             data?.map((searchData,i) => {
-              console.log(searchData)
               return (
                 <Card key={`${i}searchData:${searchData?.id}`} data={searchData} media_type={searchData?.media_type} trending={false}/>
               )

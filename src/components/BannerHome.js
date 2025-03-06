@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 
 const BannerHome = () => {
@@ -75,9 +76,9 @@ const BannerHome = () => {
                                         <span>|</span>
                                         <p>View: {Number(data.popularity).toFixed(0)}</p>
                                     </div>
-                                    <button className='bg-red-400 p-4 text-white font-bold text-xl rounded-lg mt-4 cursor-pointer hover:bg-red-700 transition-all'>
+                                    <Link className='bg-red-400 p-4 text-white font-bold text-xl rounded-lg mt-4 cursor-pointer hover:bg-red-700 transition-all'>
                                             Watch Now
-                                        </button>
+                                    </Link>
                                 </div>
                            </div>
                         )

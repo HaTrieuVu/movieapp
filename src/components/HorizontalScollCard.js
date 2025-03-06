@@ -16,7 +16,7 @@ const HorizontalScollCard = ({ data = [], titleHeading, trending, media_type }) 
 
     return (
         <div className="container mx-auto px-3 my-6 mb-[50px]">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-5">{titleHeading}</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold mb-5 capitalize ">{titleHeading}</h2>
 
             <div className="relative">
                 <div
